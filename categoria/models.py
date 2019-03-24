@@ -3,9 +3,9 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class Categoria(models.model):
+class Categoria(models.Model):
     nome = models.CharField(max_length=50)
-    descricao = models.CharField(max_length=100)
+    descricao = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Categoria'
