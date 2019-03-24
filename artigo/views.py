@@ -5,7 +5,7 @@ from .models import Artigo
 from .serializers import ArtigoSerializer
 
 
-class ArtigosListView(generics.ListCreateApiView):
+class ArtigosListView(generics.ListCreateAPIView):
     queryset = Artigo.objects.all()
     serializer_class = ArtigoSerializer
 
