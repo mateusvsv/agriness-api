@@ -5,11 +5,11 @@ from .models import Categoria
 from .serializers import CategoriaSerializer
 
 
-class ArtigosListView(generics.ListCreateAPIView):
+class CategoriaListView(generics.ListCreateAPIView):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
 
 
-class ArtigoView(generics.RetrieveUpdateDestroyAPIView):
+class CategoriaView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
