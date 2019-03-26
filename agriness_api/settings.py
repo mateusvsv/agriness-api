@@ -25,6 +25,8 @@ SECRET_KEY = 'czx(-3k&mz8$u5^erb0h%tqv$51i3w$v-9yhv1$br_74q)2qum'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 ALLOWED_HOSTS = []
 
 
@@ -40,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'artigo',
-    'categoria'
+    'categoria',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'agriness_api.urls'

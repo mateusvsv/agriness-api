@@ -10,7 +10,7 @@ schema_view = get_swagger_view(title='Agriness CMS API - Endpoints')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('artigos/', ArtigoViews.ArtigosListView.as_view()),
-    path('artigo/<int:id>/', ArtigoViews.ArtigoView.as_view()),
-    path('categorias/', CategoriaViews.CategoriaView.as_view()),
+    path('artigo/<int:pk>/', ArtigoViews.ArtigoView.as_view()),
+    path('categorias/', CategoriaViews.CategoriaListView.as_view()),
     path('docs/', schema_view),
 ]
