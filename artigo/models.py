@@ -16,7 +16,7 @@ class Artigo(models.Model):
     titulo = models.CharField(max_length=100)
     conteudo = models.TextField()
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE, null=True, blank=True)
-    categoria = models.ManyToManyField(Categoria, related_name="categorias")
+    categorias = models.ManyToManyField(Categoria, related_name='artigos_categoria')
     data_criacao = models.DateTimeField(auto_now_add=True, blank=True)
     ultima_modificacao = models.DateTimeField(auto_now=True, blank=True)
     publicado = models.BooleanField(default=False)
