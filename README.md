@@ -58,6 +58,13 @@ Uma vez configurado o projeto pode ser executado com o seguinte comando e estar�
 python manage.py runserver
 ```
 
+## Endpoints
+
+A documentação dos endpoints da API foi gerada com o framework Swagger e estará disponível com o projeto em execução.
+```
+http://127.0.0.1:8000/docs/
+```
+
 ### Implementações Futuras
 
 - Implementação de Makefile
