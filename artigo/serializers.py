@@ -16,8 +16,8 @@ class ArtigoSerializer(serializers.ModelSerializer):
 
     categorias = CategoriaSerializer(many=True)
     autor = AutorSerializer()
-    data_criacao = serializers.DateTimeField(format="%Y/%m/%d %H:%M:%S", required=False)
-    ultima_modificacao = serializers.DateTimeField(format="%Y/%m/%d %H:%M:%S", required=False)
+    data_criacao = serializers.DateTimeField(format="%d/%m/%Y %H:%M:%S", required=False, read_only=True)
+    ultima_modificacao = serializers.DateTimeField(format="%d/%m/%Y %H:%M:%S", required=False, read_only=True)
 
     class Meta:
         model = Artigo

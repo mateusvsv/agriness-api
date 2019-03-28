@@ -7,7 +7,7 @@ from .serializers import ArtigoSerializer
 
 
 class Pagination(PageNumberPagination):
-    page_size = 2
+    page_size = 3
 
 
 class ArtigosListView(generics.ListAPIView):
@@ -23,7 +23,7 @@ class ArtigosListView(generics.ListAPIView):
         if categoria:
             queryset = queryset.filter(categorias__id=categoria)
         conteudo = self.request.query_params.get('conteudo', None)
-        queryset.order_by('-data_criacao')
+        queryset = queryset.order_by('-data_criacao')
         return queryset
 
 

@@ -13,5 +13,6 @@ urlpatterns = [
     path('artigo/', ArtigoViews.ArtigosCreateView.as_view()),
     path('artigo/<int:pk>/', ArtigoViews.ArtigoView.as_view()),
     path('categorias/', CategoriaViews.CategoriaListView.as_view()),
+    path('categoria/', CategoriaViews.CategoriaView.as_view()),
     path('docs/', schema_view),
 ]
