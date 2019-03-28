@@ -36,3 +36,18 @@ class ArtigoSerializer(serializers.ModelSerializer):
         artigo.categorias.set(categorias)
         artigo.save()
         return artigo
+
+    def update(self, instance, validated_data):
+        instance.titulo = validated_data.get('titulo', instance.titulo)
+        instance.conteudo = validated_data.get('conteudo', instance.conteudo)
+        instance.publicado = validated_data.get('publicado', instance.publicado)
+        autor = Autor.objects.get_or_create(**validated_data.pop('autor'))[0]
+        instance.autor = autor
+        instance.categorias.set([])
+        categorias_data = validated_data.pop('categorias')
+        categorias = []
+        for categoria in categorias_data:
+            categorias.append(Categoria.objects.get(**categoria))
+        instance.categorias.set(categorias)
+        instance.save()
+        return instance
