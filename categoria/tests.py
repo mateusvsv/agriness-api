@@ -22,6 +22,6 @@ class CategoriaTests(APITestCase):
     def test_atualizar_categoria(self):
         categoria = Categoria.objects.create(nome="Teste1", descricao='descricao')
         data = {'id': categoria.id, 'nome': 'teste2'}
-        response = self.client.put('/categoria/' + str(categoria.id), data, format='json')
+        response = self.client.put('/categoria/' + str(categoria.id) + '/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(Categoria.objects.get().nome, 'teste2')

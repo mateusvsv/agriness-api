@@ -31,6 +31,6 @@ class ArtigoTests(APITestCase):
         data = {'id': artigo.id, 'titulo': 'teste2', 'conteudo': 'conteudo', 'publicado': False,
                 'autor': {'id': artigo.autor.id, 'nome': self.autor.nome, 'email': self.autor.email},
                 'categorias': [{'id': self.categoria.id, 'nome': self.categoria.nome}]}
-        response = self.client.put('/artigo/' + str(artigo.id), data, format='json')
+        response = self.client.put('/artigo/' + str(artigo.id) + '/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(Artigo.objects.get().publicado, False)
