@@ -1,6 +1,4 @@
-## Agriness CMS API
-
-# AgrinessCms
+# Agriness CMS API
 
 Aplicação desenvolvida em **Django Rest Framework** para um simples gerenciador de conteúdo onde será possível cadastrar 
 incríveis textos para leitura futura.
